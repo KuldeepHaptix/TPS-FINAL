@@ -1,0 +1,95 @@
+﻿@media (max-width: 767px) {
+    .app_wrapper {
+        width: 100%;
+    }
+    .mod_box {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .app_wrapper {
+        width: 100%;
+    }
+    .mod_text{
+        min-height: 36px;
+    }
+    .home_img_title {
+        font-size: 12px;
+    }
+    .mdl-button--fab.mdl-button--mini-fab {
+        height: 30px;
+        min-width: 30px;
+        width: 30px;
+        background-size: contain;
+        font-size: 24px !important;
+    }
+    .mdl-menu__container{
+        top:50px !important;
+    }
+    .mod_img img{
+        width:50%;
+    }
+    /*.app_head h1 {
+        font-size: 125%;
+    }*/
+}
+
+/*@media (max-width: 420px) {
+
+     .app_head h1 {
+        font-size: 100%;
+    }
+}*/
+
+/*--------For Messages-----*/
+@media (max-width: 500px) {
+    /*ul.topnav li span {
+        height: 40px;
+    }*/
+}
+
+/*-------For Notice Board------*/
+@media (max-width: 767px) {
+    td, th {
+        font-size: 120%;
+    }
+}
+
+@media (max-width: 500px) {
+    td, th {
+        font-size: 100%;
+    }
+}
+
+/*------Pay fees online------*/
+@media (max-width: 767px) {
+    /*td, th {
+        font-size: 120%;
+    }*/
+
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    td, th {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    input[type="checkbox"] {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+/*------For Gallery-----*/
+@media (max-width: 500px) {
+    .gl_col {
+        height: 200px;
+    }
+}

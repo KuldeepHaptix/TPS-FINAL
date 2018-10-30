@@ -1,0 +1,305 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="EmployeeManagement.Main" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Perfect Solutions | Search Complaints</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <%--<link href="CDN/font-awesome.min.css" rel="stylesheet" />--%>
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <%--<link href="CDN/ionicons.min.css" rel="stylesheet" />--%>
+
+    <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <link href="plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <%--<link href="plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+    <link href="plugins/fullcalendar/fullcalendar.print.css" rel="stylesheet" media="print"/>--%>
+    <%--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>--%><script src="CDN/jquery-1.12.4.min.js"></script>
+
+
+    <%--<link href="Calendar/common.css" rel="stylesheet" />--%>
+    <link href="Calendar/calender.css" rel="stylesheet" />
+    <link href="Calendar/attendance.css" rel="stylesheet" />
+    <link href="Calendar/material.min.css" rel="stylesheet" />
+    <link href="Calendar/responsive.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <form id="form1" runat="server" style="width: 100%">
+
+        <div class="wrapper">
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="Search_Employee.aspx" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>T</b>PS</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg" style="font-size: 18px"><b>Complaint</b> Management</span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div style="float: left; width: 75%; display: inline; text-align: center; padding-top: 12px">
+                        <asp:Label ID="lbl_pageHeader" runat="server" Text=""
+                            Style="color: #ffffff; vertical-align: middle; font-size: 17px; padding-top: 8px; font-weight: bold"></asp:Label>
+                    </div>
+                    <div style="float: left; width: 20%; display: inline; text-align: center; padding-top: 12px">
+                        <%--<asp:LinkButton ID="lnkButton" runat="server" Style="color: #ffffff; vertical-align: middle; font-size: 17px; padding-top: 8px; font-weight: bold" OnClick="lnkButton_Click">Take Backup</asp:LinkButton>--%>
+                    </div>
+
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-left info">
+                            <asp:Label ID="lbl_User" runat="server" Text=""></asp:Label>
+                            <br />
+                            <br />
+                            <asp:LinkButton ID="Signout" runat="server" Text="Signout" class="hidden-xs" Style="color: #0094ff; font-size: 17px" OnClick="Signout_Click"></asp:LinkButton>
+                        </div>
+                        <div class="pull-right">
+                            <a href="#"><i class="fa fa-gears"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="treeview">
+                            <%-- <a href="Dashboard.aspx">
+                                <i class="fa fa-dashboard"></i><span>Dashboard</span>
+
+                            </a>--%>
+                            <%--  <ul class="treeview-menu">
+                                <li class="active"><a href="Dashboard.aspx"><i class="fa fa-circle-o"></i>Dashboard V1</a></li>
+                            </ul>--%>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>Master Data</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            
+                            <ul class="treeview-menu">
+                                <%--<li id="sch" runat="server"><a href="Manage_Organization.aspx"><i class="fa fa-circle-o"></i>Manage Organization</a></li>--%>
+                               <li><a href="ManageDepartment.aspx"><i class="fa fa-circle-o"></i>Add City</a></li>
+                                 <%--<li><a href="ManageDesignation.aspx"><i class="fa fa-circle-o"></i>Manage Desigation</a></li>
+                                <li><a href="Manage_Caste.aspx"><i class="fa fa-circle-o"></i>Manage Caste</a></li>
+                                <li><a href="Manage_Category.aspx"><i class="fa fa-circle-o"></i>Manage Category</a></li>
+                                <li><a href="Mange_Religion.aspx"><i class="fa fa-circle-o"></i>Manage Religion</a></li>
+                                <li><a href="Holiday_Setup.aspx"><i class="fa fa-circle-o"></i>Holiday Setup</a></li>
+                                <li><a href="EmployeeAssignHolidayProfile.aspx"><i class="fa fa-circle-o"></i>Assign Employee To Holiday Profile</a></li>
+                                <li><a href="AcademicYearSetUp.aspx"><i class="fa fa-circle-o"></i>Academic Year SetUp</a></li>
+                                <li><a href="SalaryConfiguration.aspx"><i class="fa fa-circle-o"></i>Emp Salary Configuration</a></li>--%>
+                                <li id="useraccount" runat="server"><a href="createuseraccount.aspx"><i class="fa fa-circle-o"></i>Add Enginerr Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" id="List1" runat="server">
+                            <a href="#">
+                                <i class="fa fa-user"></i><span>Complaint Details</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="ManageEmployee.aspx?Emp=0"><i class="fa fa-circle-o"></i>Add Complaints</a></li>
+                                <li><a href="Search_Employee.aspx"><i class="fa fa-circle-o"></i>Search Complaints</a></li>
+                                <%--<li><a href="employee_module_group.aspx"><i class="fa fa-circle-o"></i>Manage Module Group</a></li>
+                                <li><a href="employeeassigngroup.aspx"><i class="fa fa-circle-o"></i>Assign Employee To Module Group</a></li>
+                                <li><a href="ModuleGrp_AssignTo_Employee.aspx"><i class="fa fa-circle-o"></i>Assign ModuleGroup To Employee</a></li>
+                                <li><a href="addeditprofile.aspx"><i class="fa fa-circle-o"></i>Manage Query Profile</a></li>--%>
+
+                            </ul>
+                        </li>
+                        <%--<li class="treeview" id="List2" runat="server">
+                            <a href="#">
+                                <i class="fa fa-users"></i><span>Employee Attendance</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="Time_Group_List.aspx"><i class="fa fa-circle-o"></i>Time Group List</a></li>
+                                <li><a href="Employee_AssignToTimeGroup.aspx"><i class="fa fa-circle-o"></i>Employee Assign To Time Group</a></li>
+                                <li><a href="Manage_ReportingManager.aspx"><i class="fa fa-circle-o"></i>Manage Reporting Manager</a></li>
+                                <li><a href="Employee_AssignToReportingManager.aspx"><i class="fa fa-circle-o"></i>Employee Assign To Reporting Manager</a></li>
+                                <li><a href="Employee_Attendance.aspx"><i class="fa fa-circle-o"></i>Employee Attendance Entry</a></li>
+                                <li><a href="EmpLeaveConfig.aspx"><i class="fa fa-circle-o"></i>Leave Configuration</a></li>
+                                <%-- <li><a href="Employee_Attendance_Override.aspx"><i class="fa fa-circle-o"></i>EmployeeWise Attendance OverWrite</a></li>--%>
+                               <%-- <li><a href="EmployeeHalfFullDayConfiguration.aspx"><i class="fa fa-circle-o"></i>EmployeeWise Half/Full Day Configuration</a></li>
+                                <li><a href="EmpWiseTimeConfig.aspx"><i class="fa fa-circle-o"></i>EmployeeWise Time Configuration</a></li>
+
+                            </ul>
+                        </li>--%>
+                        <li class="treeview" id="List3" runat="server">
+                            <a href="#">
+                                <i class="fa fa-table"></i><span>Compaints Report</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="EmployeeGroupForReports.aspx"><i class="fa fa-circle-o"></i>Employee Report's Group</a></li>
+                                <%-- <li><a href="AttendanceReports.aspx?rep=1"><i class="fa fa-circle-o"></i>Employee Monthly Attendance</a></li>--%>
+                                <li><a href="AttendanceReports.aspx?rep=2"><i class="fa fa-circle-o"></i>1.Late Comers Report</a></li>
+                                <%--<li><a href="AttendanceReports.aspx?rep=3"><i class="fa fa-circle-o"></i>Employeewise Monthly Attendance</a></li>
+                                <li><a href="AttendanceReports.aspx?rep=4"><i class="fa fa-circle-o"></i>Employee Total Working Hours Report</a></li>
+                                <li><a href="AttendanceReports.aspx?rep=5"><i class="fa fa-circle-o"></i>Monthwise Employee Attendance Report</a></li>--%>
+                                <li><a href="AttendanceReports.aspx?rep=6"><i class="fa fa-circle-o"></i>2.Employee Monthly Salary</a></li>
+                                <%--<li><a href="AttendanceReports.aspx?rep=7"><i class="fa fa-circle-o"></i>Employeewise Leave Details</a></li>
+                                <li><a href="AttendanceReports.aspx?rep=8"><i class="fa fa-circle-o"></i>3.Employee Monthly Leave Count Report</a></li>--%>
+                                <li><a href="AttendanceReports.aspx?rep=9"><i class="fa fa-circle-o"></i>3.Employeewise Monthly Leave Count Report</a></li>
+                                <li><a href="AttendanceReports.aspx?rep=10"><i class="fa fa-circle-o"></i>4.Daily Punch Detail</a></li>
+                                <li><a href="AttendanceReports.aspx?rep=11"><i class="fa fa-circle-o"></i>5.Employeewise Punch Detail</a></li>
+                            </ul>
+                        </li>
+                        <%--<li class="treeview" id="List4" runat="server">
+                            <a href="#">
+                                <i class="fa fa-table"></i><span>Attendance From Manual Entry</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="AttendanceReports.aspx?rep=12"><i class="fa fa-circle-o"></i>1. Present/Absent Detail</a></li>
+                                <li><a href="AttendanceReports.aspx?rep=13"><i class="fa fa-circle-o"></i>2. Present/Absent Detail EmployeeWise</a></li>
+                            </ul>
+                        </li>--%>
+                    </ul>
+
+
+
+
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <div class="content-wrapper">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b>1.0.0
+   
+                </div>
+                <strong>Copyright &copy; 2017-2019 <a href="http://www.vayuna.com/">Vayuna</a>.</strong> All rights
+    reserved.
+ 
+            </footer>
+
+
+
+
+            <div class="control-sidebar-bg"></div>
+        </div>
+        <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <%--<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>--%><script src="CDN/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button);
+        </script>
+        <!-- Bootstrap 3.3.6 -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- Select2 -->
+        <script src="../../plugins/select2/select2.full.min.js"></script>
+
+        <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+        <!-- daterangepicker -->
+        <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>--%><script src="CDN/moment.min.js"></script>
+        <script src="plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- datepicker -->
+        <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+        <script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+
+        <script src="dist/js/app.js"></script>
+
+
+        <script src="CDN/dataTables.fixedHeader.min.js"></script>
+        <link href="CDN/fixedHeader.dataTables.min.css" rel="stylesheet" />
+
+        <script src="Calendar/eventcal.js"></script>
+        <script src="Calendar/material.min.js"></script>
+        <%--<script src="Calendar/script.js"></script>
+       <script src="Calendar/jquery.min.js"></script>--%>
+        <%--<script>
+            $(function () {
+                var url = window.location.pathname;
+                var q = window.location.href.split("?")
+
+                if (url.startsWith('/') == true) {
+                    url = url.substring(1, url.length);
+                }
+                //if (q.length > 1) {
+                //    url = url + "?" + q[1];
+                //}
+                $(".sidebar-menu li, .sidebar-menu ul").removeClass("active");
+                $(".sidebar-menu a[href*='" + url + "']").parent().addClass("active");
+                $(".sidebar-menu a[href*='" + url + "']").parents().addClass("active");
+            });
+
+            $(".select2").select2();
+        </script>--%>
+        <script>
+            //$(function () {
+            var url = window.location.pathname + window.location.search
+            //var url = window.location.pathname;
+            var q = window.location.href.split("?")
+
+            if (url.startsWith('/') == true) {
+                url = url.substring(1, url.length);
+            }
+            //if (q.length > 1) {
+            //    url = url + "?" + q[1];
+            //}
+            $(".sidebar-menu li, .sidebar-menu ul").removeClass("active");
+            $(".sidebar-menu a[href*='" + url + "']").parent().addClass("active");
+            $(".sidebar-menu a[href*='" + url + "']").parents().addClass("active");
+            //});
+
+            $(".select2").select2();
+        </script>
+
+    </form>
+</body>
+</html>

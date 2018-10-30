@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html ng-app="VayunaApp" ng-controller="VayunaController">
+<head>
+    <title>Employee Management | Document</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="fonts.css" type="text/css" charset="utf-8" />
+
+    <script src="Angular/angular.min.js"></script>
+    <script src="Angular/jquery.min.js"></script>
+    <script src="Angular/material.min.js"></script>
+    <script src="Angular/script.js"></script>
+  
+    <link href="Angular/animate.min.css" rel="stylesheet" />
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+            * element that contains the map. */
+        #map {
+            max-height: 100%;
+            height: 600px;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script>
+    var url = getUrlParameter("url", window.location.href)
+    url = url.replace(/@sp@/g, " ")
+    url = url.replace("/@ap@/g", "&")
+    url = url.replace("/@pp@/g", "%%")
+    url = url.replace("/@lt@/g", "<")
+    url = url.replace("/@gt@/g", ">")
+    url = url.replace("/@hs@/g", "#")
+    url = url.replace("/@sq@/g", "'")
+    url = url.replace("/@dq@/g", "\"")
+    url = url.replace("/@qm@/g", "?")
+    url = url.replace("/@sc@/g", ";")
+    url = url.replace("/@eqlto@/g", "=")
+    url = url.replace("/@verb@/g", "|")
+    //var ThemeID = getUrlParameter("th", window.location.href)
+    var app = angular.module("VayunaApp", []);
+
+    app.controller("VayunaController", function ($scope) {
+
+        //$scope.EmbedUrl = "https://docs.google.com/gview?embedded=true&url=" + url + " ";
+        $scope.EmbedUrl =url ;
+    
+      
+    });
+
+    // Set PageTitle
+   
+
+
+    app.directive('embedSrc', function () {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                scope.$watch(
+                  function () {
+                      return attrs.embedSrc;
+                  },
+                  function () {
+                      element.attr('src', attrs.embedSrc);
+                  }
+                );
+            }
+        };
+    });
+    
+    </script>
+</head>
+<body class="animated fadeIn">
+    <div class="app_wrapper app_wrapper_bg ">
+        <!--<div ng-include="'commonHead.html'" ng-init="setCookie('Notice', 'noticeboard.html');"></div>-->
+       
+        <div class="app_container">
+            <div id="map">
+                <iframe embed-src="{{EmbedUrl}}" style="width:100%; height:100%;" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

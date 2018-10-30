@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="myConnectionString-Web.config Connection String" description="myConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=NILESHRAI-PC\SQLEXPRESS;Initial Catalog=TPS;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\CompanyProject\\EmployeeManagement_569\\EmployeeManagement_569\\EmployeeManagement\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='myConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
