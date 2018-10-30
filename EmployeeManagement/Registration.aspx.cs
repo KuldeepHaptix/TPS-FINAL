@@ -20,10 +20,10 @@ namespace EmployeeManagement
         }
         public void cleardata()
         {
-            txtconfpwd.Text = " ";
-            txtemail.Text = " ";
-            txtpwd.Text = " ";
-            txtname.Text = " ";
+            txtconfpwd.Text = "";
+            txtemail.Text = "";
+            txtpwd.Text = "";
+            txtname.Text = "";
             lblmsg.Text = "";
 
         }

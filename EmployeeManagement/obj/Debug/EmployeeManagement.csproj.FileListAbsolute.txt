@@ -51,3 +51,13 @@ C:\Users\adms\Desktop\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\Em
 D:\CompanyProject\EmployeeManagement_569\EmployeeManagement_569\EmployeeManagement\bin\RestSharp.dll
 D:\CompanyProject\EmployeeManagement_569\EmployeeManagement_569\EmployeeManagement\bin\RestSharp.xml
 D:\CompanyProject\EmployeeManagement_569\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.csprojResolveAssemblyReference.cache
+D:\New folder\TPS-FINAL\EmployeeManagement\bin\EmployeeManagement.dll.config
+D:\New folder\TPS-FINAL\EmployeeManagement\bin\EmployeeManagement.dll
+D:\New folder\TPS-FINAL\EmployeeManagement\bin\EmployeeManagement.pdb
+D:\New folder\TPS-FINAL\EmployeeManagement\bin\RestSharp.dll
+D:\New folder\TPS-FINAL\EmployeeManagement\bin\RestSharp.xml
+D:\New folder\TPS-FINAL\EmployeeManagement\obj\Debug\EmployeeManagement.csprojAssemblyReference.cache
+D:\New folder\TPS-FINAL\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.CoreCompileInputs.cache
+D:\New folder\TPS-FINAL\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.CopyComplete
+D:\New folder\TPS-FINAL\EmployeeManagement\obj\Debug\EmployeeManagement.dll
+D:\New folder\TPS-FINAL\EmployeeManagement\obj\Debug\EmployeeManagement.pdb

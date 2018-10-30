@@ -131,7 +131,7 @@
                                 <br />
                                 <br />--%>
         <%-- </div>--%>
-        <div class="box box-default " id="panel_7">
+        <div class="box box-default hide " id="panel_7">
             <div class="box-body">
                 <div class="row col-md-4">
                     <div class="col-md-12">
@@ -227,13 +227,9 @@
                 <%--//Personal--%>
             </div>
         </div>
-        <div class="box box-default collapsed-box" id="panel_2">
+        <div class="box box-default " id="panel_2">
             <div class="box-header with-border" data-id="2">
                 <h3 class="box-title"><b>Employee Personal Details</b></h3>
-
-                <div class="box-tools pull-right">
-                    <button data-id="2" type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
-                </div>
             </div>
             <div class="box-body">
                 <div class="row">
@@ -393,7 +389,7 @@
         </div>
 
         <%--Family--%>
-        <div class="panel box box-default collapsed-box" id="panel_3">
+        <div class="panel box box-default collapsed-box hide" id="panel_3">
             <div class="box-header with-border" data-id="3">
                 <h3 class="box-title"><b>Employee Family Details</b></h3>
 

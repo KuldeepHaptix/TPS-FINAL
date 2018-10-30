@@ -14,7 +14,7 @@
         </ol>
     </section>
     <section class="content">
-        <div class="box box-default">
+        <div class="box box-default hide">
             <div class="box-header with-border">
                 <h3 class="box-title">Search Criteria</h3>
 

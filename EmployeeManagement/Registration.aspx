@@ -28,14 +28,14 @@
             <asp:Label ID="lblmsg" runat="server" Text="" ForeColor="white" Class="form__input_error"></asp:Label>
         </div>
         <div class="form__group">
-            <asp:textbox runat="server" ID="txtname" class="form__input" AutoCompleteType="Disabled" placeholder="Username #" AutoPostBack="true"></asp:textbox>
+            <asp:textbox runat="server" ID="txtname" class="form__input" AutoCompleteType="Disabled" placeholder="Username #" ></asp:textbox>
         </div>
 
         <div class="form__group">
-            <asp:TextBox ID="txtemail" runat="server" class="form__input" placeholder="Email" AutoCompleteType="Disabled"  AutoPostBack="false"></asp:TextBox>
+            <asp:TextBox ID="txtemail" runat="server" class="form__input" placeholder="Email" AutoCompleteType="Disabled"  ></asp:TextBox>
         </div>
         <div class="form__group">
-        <asp:TextBox ID="txtcnno" onkeypress="return isNumberKey(event)"  MaxLength="10" runat="server" class="form__input" TextMode="Phone" placeholder="Contact #" AutoPostBack="false"></asp:TextBox>
+        <asp:TextBox ID="txtcnno" onkeypress="return isNumberKey(event)"  MaxLength="10" runat="server" class="form__input" TextMode="Phone" placeholder="Contact #" ></asp:TextBox>
         </div>
         <div class="form__group">
             <asp:Label ID="Label6" class="btn_redio" runat="server" Text="Gender"></asp:Label>
@@ -43,10 +43,10 @@
             <asp:RadioButton ID="rdbFemale" runat="server" class="btn_redio" Text="&nbsp;Female" GroupName="gender" />
         </div>
         <div class="form__group">
-            <asp:TextBox ID="txtpwd" runat="server" TextMode="Password" class="form__input" placeholder="Password" AutoPostBack="false"></asp:TextBox>
+            <asp:TextBox ID="txtpwd" runat="server" TextMode="Password" class="form__input" placeholder="Password"></asp:TextBox>
         </div>
         <div class="form__group">
-            <asp:TextBox ID="txtconfpwd" runat="server" TextMode="Password" class="form__input" placeholder="Confirm Password" AutoPostBack="false"></asp:TextBox>
+            <asp:TextBox ID="txtconfpwd" runat="server" TextMode="Password" class="form__input" placeholder="Confirm Password" ></asp:TextBox>
         </div>
         <asp:Button ID="btnSave" class="btn" type="button"
                     runat="server" Text="Save"  OnClientClick="return validateRegistrationDetails()" OnClick="btnSave_Click" />
